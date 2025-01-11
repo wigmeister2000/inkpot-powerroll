@@ -24,8 +24,6 @@ export class PowerRollDamage4e {
                       .filter(baseQuantity => baseQuantity);
     if(weapons.length > 1) ui.notifications.warn(`Too many weapons in: ${withoutBrackets}`);
     const baseQuantity = weapons[0] || "";
-    formula += '+@dmgMod';
-    crit += '+@dmgMod';
     const damageType = Config.DAMAGE_TYPES
                         .filter(dmgType => typeTxt.match(new RegExp(dmgType, 'i')))
                         .reduce((obj, dmgType) => ({ ...obj, [dmgType]: true}), {});
