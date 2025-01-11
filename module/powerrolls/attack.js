@@ -13,7 +13,7 @@ export class PowerRollAttack4e {
   static _createPowerRollAttack(withoutBrackets, {atkTxt, defTxt, wpnTxt}, replacementTxt) {
     let { parsedForm, formula } = PowerRollUtils4e.parseFormula(atkTxt);
     if (parsedForm.some(data => data.data.type == Config.TYPES.ABILITY)) formula += '+@lvhalf';
-    formula += '+@atkMod+@wepAttack';
+    formula += '@wepAttack';
 
     const parsedDef = PowerRollUtils4e._toParsedData(defTxt, '{}', Config.DEFENSE);
     const def = parsedDef[0].data.form;
